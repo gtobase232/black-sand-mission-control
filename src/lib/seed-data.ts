@@ -1,0 +1,236 @@
+import { Task, CalendarEvent, Project, MemoryEntry, Doc, TeamMember, FinanceEntry, Lead, AnalyticsData, ContentPost, DailyReport } from './types';
+
+export const seedTasks: Task[] = [
+  { id: '1', title: 'Design agent orchestration layer', description: 'Build the core orchestration system for managing multiple AI agents', assignee: 'Wolve', priority: 'critical', status: 'in-progress', dueDate: '2026-03-10', createdAt: '2026-03-01' },
+  { id: '2', title: 'Cold outreach email templates', description: 'Create 10 personalized outreach templates for B2B leads', assignee: 'Trinkster', priority: 'high', status: 'todo', dueDate: '2026-03-08', createdAt: '2026-03-01' },
+  { id: '3', title: 'Polymarket data pipeline', description: 'Set up real-time data ingestion from prediction markets', assignee: 'Wolve', priority: 'high', status: 'in-progress', dueDate: '2026-03-12', createdAt: '2026-03-02' },
+  { id: '4', title: 'Landing page copy', description: 'Write compelling copy for the Black Sand website', assignee: 'Trinkster', priority: 'medium', status: 'review', dueDate: '2026-03-06', createdAt: '2026-03-01' },
+  { id: '5', title: 'Investor deck update', description: 'Update pitch deck with latest metrics and traction', assignee: 'Both', priority: 'critical', status: 'todo', dueDate: '2026-03-07', createdAt: '2026-03-02' },
+  { id: '6', title: 'Local website builder MVP', description: 'Complete the MVP for the local business website generator', assignee: 'Wolve', priority: 'high', status: 'backlog', dueDate: '2026-03-20', createdAt: '2026-03-03' },
+  { id: '7', title: 'CRM integration research', description: 'Research HubSpot and Salesforce API integrations', assignee: 'Trinkster', priority: 'medium', status: 'done', dueDate: '2026-03-04', createdAt: '2026-02-28' },
+  { id: '8', title: 'Weekly X content plan', description: 'Plan and schedule content for the upcoming week', assignee: 'Both', priority: 'medium', status: 'todo', dueDate: '2026-03-05', createdAt: '2026-03-03' },
+  { id: '9', title: 'Agent memory system', description: 'Implement persistent memory for AI agents across sessions', assignee: 'Wolve', priority: 'critical', status: 'backlog', dueDate: '2026-03-15', createdAt: '2026-03-03' },
+  { id: '10', title: 'Client onboarding flow', description: 'Design the automated client onboarding experience', assignee: 'Trinkster', priority: 'high', status: 'backlog', dueDate: '2026-03-18', createdAt: '2026-03-03' },
+];
+
+export const seedCalendarEvents: CalendarEvent[] = [
+  { id: '1', title: 'Team standup', date: '2026-03-04', time: '09:00', assignee: 'Both', type: 'meeting' },
+  { id: '2', title: 'Investor call - Series A', date: '2026-03-06', time: '14:00', assignee: 'Both', type: 'meeting' },
+  { id: '3', title: 'Cold Outreach launch', date: '2026-03-10', time: '10:00', assignee: 'Trinkster', type: 'launch' },
+  { id: '4', title: 'Polymarket bot review', date: '2026-03-08', time: '16:00', assignee: 'Wolve', type: 'review' },
+  { id: '5', title: 'Sprint review', date: '2026-03-14', time: '11:00', assignee: 'Both', type: 'review' },
+  { id: '6', title: 'CDMX Tech Meetup', date: '2026-03-12', time: '18:00', assignee: 'Both', type: 'other' },
+  { id: '7', title: 'Website builder deadline', date: '2026-03-20', time: '23:59', assignee: 'Wolve', type: 'deadline' },
+  { id: '8', title: 'Content strategy session', date: '2026-03-05', time: '15:00', assignee: 'Both', type: 'meeting' },
+];
+
+export const seedProjects: Project[] = [
+  {
+    id: '1', name: 'Project Manager', description: 'AI-powered project management agent that handles task assignment, progress tracking, and team coordination autonomously.',
+    status: 'active', progress: 65,
+    kpis: [{ label: 'Tasks Automated', value: '847', target: '1000' }, { label: 'Time Saved (hrs)', value: '120', target: '200' }, { label: 'Client Satisfaction', value: '94%', target: '95%' }]
+  },
+  {
+    id: '2', name: 'Cold Outreach', description: 'Intelligent outreach agent that researches prospects, personalizes emails, and manages follow-up sequences automatically.',
+    status: 'active', progress: 40,
+    kpis: [{ label: 'Emails Sent', value: '2,340', target: '5000' }, { label: 'Response Rate', value: '12%', target: '15%' }, { label: 'Meetings Booked', value: '28', target: '50' }]
+  },
+  {
+    id: '3', name: 'Polymarket Bot', description: 'Prediction market analysis bot that monitors odds, identifies arbitrage opportunities, and executes trades.',
+    status: 'active', progress: 55,
+    kpis: [{ label: 'Markets Tracked', value: '156', target: '200' }, { label: 'Win Rate', value: '67%', target: '70%' }, { label: 'ROI', value: '23%', target: '30%' }]
+  },
+  {
+    id: '4', name: 'Local Website Builder', description: 'Agent that creates custom websites for local businesses in minutes using AI-generated content and design.',
+    status: 'planning', progress: 15,
+    kpis: [{ label: 'Sites Built', value: '3', target: '50' }, { label: 'Avg Build Time', value: '12min', target: '5min' }, { label: 'Client Revenue', value: '$2.4K', target: '$25K' }]
+  },
+];
+
+export const seedMemoryEntries: MemoryEntry[] = [
+  { id: '1', date: '2026-03-04', content: 'Decided to focus on B2B SaaS market in LATAM first before expanding to US. CDMX as HQ gives us timezone advantage for both markets.', category: 'decision' },
+  { id: '2', date: '2026-03-03', content: 'Cold outreach response rates jumped 3x after switching to hyper-personalized AI-generated emails. Key insight: reference specific company metrics.', category: 'insight' },
+  { id: '3', date: '2026-03-02', content: 'Completed first paying client onboarding for Project Manager. $5K MRR contract.', category: 'milestone' },
+  { id: '4', date: '2026-03-01', content: 'Met with 3 VCs at CDMX tech event. Two showed strong interest in our agent-first approach. Follow up scheduled for March 6.', category: 'note' },
+  { id: '5', date: '2026-02-28', content: 'Polymarket bot achieved 67% win rate over 30-day period. Need to improve risk management before scaling positions.', category: 'insight' },
+  { id: '6', date: '2026-02-25', content: 'Decided on pricing model: $2K-10K/month per agent depending on complexity and volume. Enterprise custom pricing above $25K.', category: 'decision' },
+  { id: '7', date: '2026-02-20', content: 'Hit 1,000 followers on X. Engagement rate at 4.2% — well above industry average. Thread format working best.', category: 'milestone' },
+  { id: '8', date: '2026-02-18', content: 'Local website builder prototype completed. Can generate a full site in 12 minutes. Target is under 5 minutes.', category: 'milestone' },
+];
+
+export const seedDocs: Doc[] = [
+  { id: '1', title: 'Architecture Overview', project: 'Project Manager', content: '# Architecture Overview\n\n## System Design\n\nThe Project Manager agent uses a **multi-layer architecture**:\n\n1. **Orchestration Layer** — Manages task routing and agent coordination\n2. **Memory Layer** — Persistent context across sessions\n3. **Action Layer** — Executes tasks via tool integrations\n4. **Learning Layer** — Improves from feedback loops\n\n## Tech Stack\n- Runtime: Node.js + TypeScript\n- AI: Claude API (Anthropic)\n- Database: PostgreSQL + pgvector\n- Queue: Redis + BullMQ\n\n## Key Decisions\n- Agent-first architecture over workflow automation\n- Real-time streaming responses\n- Stateful conversations with memory persistence', updatedAt: '2026-03-03', tags: ['architecture', 'technical'] },
+  { id: '2', title: 'Outreach Playbook', project: 'Cold Outreach', content: '# Cold Outreach Playbook\n\n## Strategy\n\n### Target Profile\n- B2B SaaS companies, 50-500 employees\n- Series A to Series C\n- Operations-heavy (support, sales, marketing teams)\n\n### Sequence\n1. **Day 1**: Personalized intro email (reference specific pain point)\n2. **Day 3**: Follow-up with case study\n3. **Day 7**: Value-add content share\n4. **Day 14**: Final check-in with calendar link\n\n### Metrics to Track\n- Open rate > 45%\n- Response rate > 12%\n- Meeting book rate > 5%', updatedAt: '2026-03-02', tags: ['sales', 'playbook'] },
+  { id: '3', title: 'Polymarket Strategy', project: 'Polymarket Bot', content: '# Polymarket Trading Strategy\n\n## Approach\n\n### Market Selection\n- Focus on political and tech markets\n- Minimum liquidity: $50K\n- Time horizon: 1-4 weeks\n\n### Signal Sources\n- News sentiment analysis\n- Social media trends\n- Historical pattern matching\n- Expert opinion aggregation\n\n### Risk Management\n- Max 5% of portfolio per position\n- Stop loss at 30% drawdown\n- Daily rebalancing\n- Correlation monitoring', updatedAt: '2026-03-01', tags: ['strategy', 'trading'] },
+  { id: '4', title: 'Brand Guidelines', project: 'Local Website Builder', content: '# Black Sand Brand Guidelines\n\n## Brand Identity\n\n### Colors\n- Primary: #0a0a0a (Black Sand)\n- Accent: #e94560 (Signal Red)\n- White: #ffffff\n\n### Voice\n- **Confident** but not arrogant\n- **Technical** but accessible\n- **Bold** but not aggressive\n\n### Mission\n"We build AI agents that run your operations while you run your vision."\n\n### Tagline Options\n- "Your AI workforce, deployed."\n- "Operations on autopilot."\n- "The agents you\'d hire if they existed."', updatedAt: '2026-03-04', tags: ['brand', 'design'] },
+  { id: '5', title: 'API Documentation', project: 'Project Manager', content: '# Project Manager API\n\n## Endpoints\n\n### POST /api/agents/deploy\nDeploy a new agent instance.\n\n```json\n{\n  "type": "project-manager",\n  "config": {\n    "workspace": "client-abc",\n    "integrations": ["slack", "jira", "github"]\n  }\n}\n```\n\n### GET /api/agents/:id/status\nGet agent status and current tasks.\n\n### POST /api/agents/:id/task\nAssign a new task to an agent.\n\n```json\n{\n  "title": "Review PR #42",\n  "priority": "high",\n  "deadline": "2026-03-05T17:00:00Z"\n}\n```', updatedAt: '2026-03-03', tags: ['api', 'technical'] },
+];
+
+export const seedTeam: TeamMember[] = [
+  { id: '1', name: 'Wolve', role: 'Technical Lead / Builder', status: 'active', currentTask: 'Building agent orchestration layer', avatar: '🐺' },
+  { id: '2', name: 'Trinkster', role: 'Strategy & Growth', status: 'active', currentTask: 'Preparing investor deck', avatar: '🧠' },
+  { id: '3', name: 'Check Rossi', role: 'Architect', status: 'active', currentTask: 'Designing system architecture & infrastructure', avatar: '🏛️' },
+  { id: '4', name: 'JohnRo', role: 'Visionary', status: 'active', currentTask: 'Shaping product vision & strategic direction', avatar: '🔮' },
+];
+
+export const seedFinance: FinanceEntry[] = [
+  { id: '1', project: 'Project Manager', type: 'revenue', category: 'MRR', amount: 5000, date: '2026-03-01', description: 'Client Alpha - monthly subscription' },
+  { id: '2', project: 'Project Manager', type: 'revenue', category: 'MRR', amount: 3500, date: '2026-03-01', description: 'Client Beta - monthly subscription' },
+  { id: '3', project: 'Cold Outreach', type: 'revenue', category: 'MRR', amount: 2000, date: '2026-03-01', description: 'Early adopter pilot' },
+  { id: '4', project: 'Polymarket Bot', type: 'revenue', category: 'Trading', amount: 4200, date: '2026-03-01', description: 'February trading profits' },
+  { id: '5', project: 'Local Website Builder', type: 'revenue', category: 'Services', amount: 2400, date: '2026-03-01', description: '3 website builds' },
+  { id: '6', project: 'Project Manager', type: 'expense', category: 'Infrastructure', amount: 1200, date: '2026-03-01', description: 'Cloud hosting & API costs' },
+  { id: '7', project: 'Cold Outreach', type: 'expense', category: 'Tools', amount: 800, date: '2026-03-01', description: 'Email infrastructure & data providers' },
+  { id: '8', project: 'Polymarket Bot', type: 'expense', category: 'Capital', amount: 2000, date: '2026-03-01', description: 'Trading capital allocation' },
+  { id: '9', project: 'General', type: 'expense', category: 'Operations', amount: 1500, date: '2026-03-01', description: 'CDMX office & utilities' },
+  { id: '10', project: 'General', type: 'expense', category: 'Software', amount: 600, date: '2026-03-01', description: 'SaaS subscriptions' },
+];
+
+export const seedLeads: Lead[] = [
+  { id: '1', company: 'TechFlow MX', contact: 'Carlos Mendez', value: 15000, stage: 'proposal', notes: 'Interested in Project Manager for their 50-person ops team', lastContact: '2026-03-03' },
+  { id: '2', company: 'Rappi Ads', contact: 'Ana García', value: 25000, stage: 'call', notes: 'Enterprise deal, need custom agent deployment', lastContact: '2026-03-02' },
+  { id: '3', company: 'Kavak', contact: 'Diego Torres', value: 10000, stage: 'outreach', notes: 'Cold outreach for their sales team automation', lastContact: '2026-03-04' },
+  { id: '4', company: 'Clip', contact: 'María López', value: 20000, stage: 'discovery', notes: 'Referred by investor network, exploring AI ops', lastContact: '2026-03-01' },
+  { id: '5', company: 'Bitso', contact: 'Fernando Ruiz', value: 30000, stage: 'call', notes: 'Want Polymarket-style analysis for their trading desk', lastContact: '2026-03-03' },
+  { id: '6', company: 'Konfío', contact: 'Laura Chen', value: 12000, stage: 'closed', notes: 'Signed! Project Manager deployment starting March 15', lastContact: '2026-03-04' },
+  { id: '7', company: 'Stori', contact: 'Roberto Silva', value: 8000, stage: 'discovery', notes: 'Interested in automated customer support agents', lastContact: '2026-02-28' },
+  { id: '8', company: 'Clara', contact: 'Andrea Martínez', value: 18000, stage: 'proposal', notes: 'Expense management automation with our agents', lastContact: '2026-03-02' },
+];
+
+export const seedAnalytics: AnalyticsData = {
+  xFollowers: [
+    { date: '2026-02-01', count: 450 },
+    { date: '2026-02-08', count: 520 },
+    { date: '2026-02-15', count: 680 },
+    { date: '2026-02-22', count: 820 },
+    { date: '2026-03-01', count: 1050 },
+    { date: '2026-03-04', count: 1180 },
+  ],
+  contentPerformance: [
+    { title: 'Why AI agents > chatbots (thread)', impressions: 45000, engagement: 2100, clicks: 890 },
+    { title: 'Building in CDMX as a founder', impressions: 32000, engagement: 1800, clicks: 420 },
+    { title: 'Our $50M mission breakdown', impressions: 28000, engagement: 1500, clicks: 670 },
+    { title: 'Agent vs. automation comparison', impressions: 22000, engagement: 980, clicks: 340 },
+    { title: 'Day in the life: AI startup CDMX', impressions: 18000, engagement: 1200, clicks: 280 },
+  ],
+  conversionRates: [
+    { source: 'X (Twitter)', visitors: 3200, leads: 48, rate: 1.5 },
+    { source: 'LinkedIn', visitors: 1800, leads: 36, rate: 2.0 },
+    { source: 'Cold Outreach', visitors: 500, leads: 28, rate: 5.6 },
+    { source: 'Referrals', visitors: 200, leads: 18, rate: 9.0 },
+    { source: 'Website', visitors: 4500, leads: 32, rate: 0.7 },
+  ],
+};
+
+export const seedContentPosts: ContentPost[] = [
+  { id: '1', title: 'Thread: 5 operations AI agents handle better than humans', content: '1/ Here are 5 operations that AI agents handle better than your best employees (and why that\'s a good thing)\n\n2/ Scheduling & coordination...\n\n3/ Data entry & CRM updates...\n\n4/ Follow-up sequences...\n\n5/ Report generation...\n\n6/ Client onboarding...', scheduledDate: '2026-03-04', scheduledTime: '10:00', status: 'published', platform: 'x', impressions: 12000, engagement: 580 },
+  { id: '2', title: 'Behind the scenes: Building Black Sand in CDMX', content: 'Building an AI company from Mexico City hits different.\n\nCheaper costs, incredible talent, and the best tacos for late-night coding sessions.\n\nHere\'s why CDMX is the next AI hub...', scheduledDate: '2026-03-05', scheduledTime: '14:00', status: 'scheduled', platform: 'x' },
+  { id: '3', title: 'Case study: How we saved Client Alpha 120 hours/month', content: 'Our Project Manager agent just saved a client 120 hours of manual work per month.\n\nHere\'s exactly how we did it (with numbers)...', scheduledDate: '2026-03-06', scheduledTime: '11:00', status: 'scheduled', platform: 'both' },
+  { id: '4', title: 'The $50M agent economy', content: 'The agent economy will be worth $50B by 2028.\n\nWe\'re building to capture $50M of it.\n\nHere\'s our thesis...', scheduledDate: '2026-03-07', scheduledTime: '09:00', status: 'draft', platform: 'x' },
+  { id: '5', title: 'AI agents vs. automation tools: A framework', content: 'Everyone confuses AI agents with automation tools.\n\nHere\'s the key difference:\n- Automation follows rules\n- Agents make decisions\n\nA framework for thinking about it...', scheduledDate: '2026-03-08', scheduledTime: '10:00', status: 'draft', platform: 'both' },
+  { id: '6', title: 'Weekly wins roundup', content: 'This week at Black Sand:\n- 2 new clients onboarded\n- Polymarket bot hit 67% win rate\n- Cold outreach response rate up 3x\n- Crossed 1K followers\n\nLFG 🚀', scheduledDate: '2026-03-09', scheduledTime: '16:00', status: 'draft', platform: 'x' },
+];
+
+export const seedDailyReports: DailyReport[] = [
+  {
+    id: '1',
+    date: '2026-03-05',
+    completedItems: [
+      'Fixed all 3 cron jobs — increased timeouts to 1800s, single-focus tasks',
+      'OpenAI API key updated — memory search back on OpenAI',
+      'Full lead research: 16 new crypto/AI/fintech companies evaluated',
+      '937 Mission Control UI: 10 iterations built (v1→v10) — liquid glass design',
+      'Competitor analysis cron structured for 937 (10 design studios)',
+    ],
+    metrics: [
+      { label: 'Leads in Pipeline', value: '19' },
+      { label: 'Top 5 Targets', value: '$20K-$80K' },
+      { label: 'UI Versions Shipped', value: '10' },
+      { label: 'Cron Jobs Operational', value: '3' },
+      { label: 'Model Providers Live', value: '4' },
+    ],
+    inProgress: [
+      'Mission Control v10 — awaiting Trinkster feedback',
+      'Competitor analysis output (2 PM cron) — needs verification',
+      'Lead pipeline data integration into live dashboard',
+    ],
+    focus: [
+      'Get v10 sign-off → finalize Mission Control dashboard',
+      'Build cold outreach templates (X DMs + emails) for top 5 pipeline targets',
+      'Wire real pipeline data into Mission Control UI',
+    ],
+    blockers: [
+      'Need Trinkster\'s v10 feedback to finalize dashboard direction',
+      'Outreach templates need tone/positioning approval before sending',
+    ],
+  },
+  {
+    id: '2',
+    date: '2026-03-04',
+    completedItems: [
+      'Mission Control V1 built — dashboard with product tracker, pipeline, task board, daily pulse',
+      'Cron jobs updated with better prompts',
+      'Architecture docs + data files committed',
+    ],
+    metrics: [
+      { label: 'Dashboards Shipped', value: '1' },
+      { label: 'Cron Jobs Configured', value: '3' },
+      { label: 'Data Files Created', value: '4' },
+    ],
+    inProgress: [
+      'Lead research kickoff',
+      'Competitor analysis setup',
+    ],
+    focus: [
+      'Build Mission Control MVP',
+      'Set up automated research cron jobs',
+    ],
+    blockers: [],
+  },
+  {
+    id: '3',
+    date: '2026-03-03',
+    completedItems: [
+      'Black Sand Mission Control architecture designed',
+      'Data model defined (products.json, pipeline.json, tasks.json, pulse.json)',
+      'Telegram bot command structure planned',
+    ],
+    metrics: [
+      { label: 'Dashboard Sections Planned', value: '5' },
+      { label: 'Bot Commands Designed', value: '6' },
+      { label: 'JSON Data Files Structured', value: '4' },
+    ],
+    inProgress: [
+      'Architecture planning',
+      'Tech stack decisions',
+    ],
+    focus: [
+      'Architecture design',
+      'Data model definition',
+      'V1 scope definition',
+    ],
+    blockers: [],
+  },
+  {
+    id: '4',
+    date: '2026-03-02',
+    completedItems: [
+      'Initial workspace setup',
+      'LIQD added as first pipeline lead',
+      'Zama and Gnosis added as reference/lost leads',
+    ],
+    metrics: [
+      { label: 'Initial Leads Added', value: '3' },
+      { label: 'Workspace Status', value: 'Initialized' },
+    ],
+    inProgress: [
+      'Pipeline structure design',
+      'Lead research methodology',
+    ],
+    focus: [
+      'Set up tracking infrastructure',
+      'Define lead scoring criteria',
+    ],
+    blockers: [],
+  },
+];
