@@ -15,6 +15,7 @@ const navItems = [
   { href: '/pipeline', label: 'Lead Pipeline', icon: '▷' },
   { href: '/analytics', label: 'Analytics', icon: '◫' },
   { href: '/content-calendar', label: 'Content', icon: '▦' },
+  { href: '/daily-reports', label: 'Daily Reports', icon: '📋' },
 ];
 
 export default function Sidebar() {
